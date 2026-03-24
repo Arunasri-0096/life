@@ -1,4 +1,9 @@
 FROM nginx:alpine
-RUN rm -rf /usr/share/nginx/html/*
-COPY index.html /usr/share/nginx/html/
+
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf ./*
+
+COPY index.html .
+
 EXPOSE 80
